@@ -9,25 +9,20 @@ Dependencies
 
 This layer depends on:
 
-  URI: git://git.openembedded.org/bitbake
-  branch: master
+URI: git://git.yoctoproject.org/poky.git
+branch: morty
 
-  URI: git://git.openembedded.org/openembedded-core
-  layers: meta
-  branch: master
+URI: git://git.openembedded.org/meta-openembedded
+branch: morty
 
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
-  branch: master
+URI: git://git.yoctoproject.org/meta-raspberrypi 
+branch: master
 
 
 Patches
 =======
 
-Please submit any patches against the meta-phc layer to the
-xxxx mailing list (xxxx@zzzz.org) and cc: the maintainer:
-
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+Maintainer: Vlad Fratila <vlad.fratila@cti.pub.ro>
 
 
 Table of Contents
@@ -39,8 +34,6 @@ Table of Contents
 
 I. Adding the meta-phc layer to your build
 =================================================
-
---- replace with specific instructions for the meta-phc layer ---
 
 In order to use this layer, you need to make the build system aware of
 it.
@@ -54,11 +47,13 @@ other layers needed. e.g.:
     /path/to/yocto/meta \
     /path/to/yocto/meta-poky \
     /path/to/yocto/meta-yocto-bsp \
-    /path/to/yocto/meta-meta-phc \
+    /path/to/yocto/meta-raspberrypi \
+    /path/to/yocto/meta-phc \
+    /path/to/yocto/meta-openembedded/meta-oe \
     "
-
 
 II. Misc
 ========
 
---- replace with specific information about the meta-phc layer ---
+This layer defines rpi-phc-image, an image based on rpi-basic-image. In order to build it, run:
+	bitbake rpi-phc-image
